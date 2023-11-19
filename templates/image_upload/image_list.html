@@ -1,0 +1,22 @@
+<!-- templates/image_upload/image_list.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'image_upload/styles.css' %}" type="text/css">
+    <title>Image List</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Image List</h2>
+
+        <div class="image-container">
+            {% for image in images %}
+                <img src="{{ image.image.url }}" alt="{{ image.description }}">
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
