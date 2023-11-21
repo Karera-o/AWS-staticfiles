@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wq3j%s#%yig$k@#-760%e^a@kh(_pqco@x^&*d#jr#u&an$t6$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app','inyambo.onrender.com']
 
@@ -158,10 +158,10 @@ AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_S3_SIGNATURE_NAME = 's3v4',
 # AWS_S3_REGION_NAME = 'AWS_S3_REGION_NAME'
 AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
+AWS_DEFAULT_ACL = None
 AWS_S3_VERITY = True
 
-AWS_DEFAULT_ACL = 'public-read'
+# AWS_DEFAULT_ACL = 'public-read'
 
 
 print(os.environ.get('ENV'))
