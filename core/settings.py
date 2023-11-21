@@ -158,8 +158,10 @@ AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_S3_SIGNATURE_NAME = 's3v4',
 # AWS_S3_REGION_NAME = 'AWS_S3_REGION_NAME'
 AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
+# AWS_DEFAULT_ACL = None
 AWS_S3_VERITY = True
+
+AWS_DEFAULT_ACL = 'public-read'
 
 
 print(os.environ.get('ENV'))
