@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 from dotenv import load_dotenv
 
@@ -100,6 +101,10 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+# 	# "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+#     "default": dj_database_url.parse('postgres://inyambouser:qrvbp59QtfcszQ4smY6W8z1genYcdm5o@dpg-cledaemf27hc738shmcg-a.oregon-postgres.render.com/inyambo')
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -174,4 +179,3 @@ else:
     MEDIA_URL = '/media/'
     
     
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
