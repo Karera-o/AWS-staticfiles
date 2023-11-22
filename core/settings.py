@@ -156,28 +156,21 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get("S3_BUCKET_NAME", "")
 AWS_S3_CUSTOM_DOMAIN = os.environ.get("AWS_S3_CUSTOM_DOMAIN", "")
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_S3_SIGNATURE_NAME = 's3v4',
-# AWS_S3_REGION_NAME = 'AWS_S3_REGION_NAME'
 AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
 AWS_S3_VERITY = True
 
-AWS_DEFAULT_ACL = 'public-read'
 
 
 print(os.environ.get('ENV'))
-
-# from .core import 
 if os.environ.get('ENV') == 'PRODUCTION':
-    # ...
-    # s3 public media settings
+    
     PUBLIC_MEDIA_LOCATION = 'media'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_S3_CUSTOM_DOMAIN.rstrip("/")}'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'core.storage_backends.MediaStorage'
-    # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    # DEFFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+   
 else:
-    # ...
+   
     MEDIA_ROOT = BASE_DIR / 'media'
     MEDIA_URL = '/media/'
     

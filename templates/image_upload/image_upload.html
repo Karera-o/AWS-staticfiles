@@ -19,9 +19,7 @@
 
         <div class="image-container">
             {% for image in images %}
-                {% comment %} <img src="{{ image.image.url }}" alt="{{ image.description }}"> {% endcomment %}
-               
-                {% comment %} <img src="'https://inyambo.s3.eu-north-1.amazonaws.com/uploads/'|add:image.url" alt="{{ image.description }}"> {% endcomment %}
+                
                 <img src="{{image.image.url}}" alt="">
                 
                
