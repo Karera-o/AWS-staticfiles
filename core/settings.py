@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wq3j%s#%yig$k@#-760%e^a@kh(_pqco@x^&*d#jr#u&an$t6$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app','inyambo.onrender.com']
 
@@ -171,6 +171,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
     # ...
     # s3 public media settings
     PUBLIC_MEDIA_LOCATION = 'media'
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_S3_CUSTOM_DOMAIN.rstrip("/")}'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'core.storage_backends.MediaStorage'
     # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
